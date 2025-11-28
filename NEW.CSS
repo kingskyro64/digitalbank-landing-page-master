@@ -1,0 +1,123 @@
+/* NEW.CSS - styles for Easybank / Digitalbank landing page */
+:root{
+	--green-1: #33D35E;
+	--green-2: #2AB6D9;
+	--navy: #172033;
+	--muted: #f2f5f7;
+	--text: #32425a;
+	--soft: #f6f7f9;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color:var(--text);
+	background:#fff;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Header / Nav */
+.header{background:#fff;box-shadow:0 1px 0 rgba(16,24,40,0.04);position:relative;z-index:40}
+.top-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.top-nav img{height:26px}
+
+.menu{list-style:none;display:flex;gap:22px;margin:0;padding:0;align-items:center}
+.menu li a{color:var(--text);text-decoration:none;font-weight:500}
+.navbar-btn button{background:linear-gradient(90deg,var(--green-1),var(--green-2));border:0;color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+
+/* Mobile hamburger */
+#menu-toggle{display:none}
+.menu-button-container{display:none}
+
+/* Hero */
+.hero{padding:60px 0}
+.hero-div{display:flex;align-items:center;gap:40px}
+.hero-left{flex:1}
+.hero-left h1{font-size:44px;margin:0 0 18px;line-height:1.05;color:var(--navy)}
+.hero-left p{color:#6b7b8f;margin:0 0 20px;max-width:540px}
+.hero-left button{background:linear-gradient(90deg,var(--green-1),var(--green-2));border:0;color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer}
+
+.hero-right{flex:1;position:relative;display:flex;justify-content:center}
+.hero-bg-image{width:100%;max-width:520px;display:block}
+.hero-mockup-image{position:absolute;right:18%;top:8%;width:360px;max-width:48%;box-shadow:0 20px 40px rgba(20,30,50,0.12);border-radius:12px;z-index:2}
+
+/* decorative blob behind hero mockups */
+.hero-blob{position:absolute;right:4%;top:-6%;width:520px;height:420px;background:var(--navy);border-radius:40%;transform:rotate(-12deg);z-index:1;opacity:1}
+
+/* About / Features */
+.about{background:var(--muted);padding:60px 0}
+.about-top h2{margin:0;font-size:28px;color:var(--navy)}
+.about-top p{color:#6b7b8f;margin:12px 0 36px}
+.about-bottom{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.div-about{background:transparent;padding:20px}
+.div-about img{width:64px;height:64px;background:linear-gradient(180deg,var(--green-1),var(--green-2));padding:14px;border-radius:50%}
+.div-about h3{margin:16px 0 10px;color:var(--navy)}
+.div-about p{margin:0;color:#6b7b8f;font-size:14px}
+
+/* Blog cards */
+.blog{padding:60px 0}
+.div-blogs-wrapper .top h2{margin:0 0 18px}
+.div-blogs-bottom{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.div-article{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.div-article img{width:100%;display:block}
+.div-article .text-box{padding:18px}
+.author{color:#9aa6b4;font-size:13px;margin:0 0 6px}
+.div-article h4{margin:0 0 8px;color:var(--navy);font-size:16px}
+.div-article p{margin:0;color:#6b7b8f;font-size:14px}
+
+/* Footer */
+footer{background:var(--navy);color:#fff;padding:40px 0}
+.div-footer{display:flex;gap:24px;align-items:flex-start;justify-content:space-between}
+.footer-left{display:flex;gap:20px;align-items:flex-start}
+.social-media-icons img{height:18px;margin-right:10px;filter:invert(1)}
+.links ul{list-style:none;padding:0;margin:0}
+.links li{margin:6px 0}
+.links a{color:#cfeff6;text-decoration:none}
+.footer-div-btn button{background:linear-gradient(90deg,var(--green-1),var(--green-2));border:0;padding:10px 18px;border-radius:999px;color:#fff;font-weight:700}
+.footer-div-btn p{color:#9fb6c6;margin-top:10px}
+
+/* Attribution small */
+.attribution{font-size:11px;color:#c1c7cc;margin-top:18px;text-align:center}
+
+/* Responsive */
+@media (max-width: 1000px){
+	.container{max-width:900px}
+	.hero-left h1{font-size:38px}
+	.hero-mockup-image{width:300px;right:12%;top:10%}
+}
+
+@media (max-width: 800px){
+	.menu{display:none;position:absolute;top:70px;right:24px;background:#fff;padding:18px;border-radius:8px;box-shadow:0 8px 30px rgba(16,24,40,0.12);flex-direction:column}
+	.menu-button-container{display:block;cursor:pointer}
+	.menu-button{width:26px;height:2px;background:#222;display:block;position:relative}
+	.menu-button::before,.menu-button::after{content:'';width:26px;height:2px;background:#222;display:block;position:absolute;left:0}
+	.menu-button::before{top:-8px}
+	.menu-button::after{top:8px}
+	#menu-toggle:checked + .menu-button-container .menu-button{background:transparent}
+	#menu-toggle:checked + .menu-button-container .menu-button::before{transform:rotate(45deg);top:0}
+	#menu-toggle:checked + .menu-button-container .menu-button::after{transform:rotate(-45deg);top:0}
+	#menu-toggle:checked ~ .menu{display:flex}
+
+	.hero-div{flex-direction:column-reverse;gap:28px}
+	.hero-right{width:100%;display:block}
+	.hero-bg-image{max-width:100%}
+	.hero-mockup-image{position:relative;right:auto;top:auto;margin:0 auto;display:block;width:70%;box-shadow:0 24px 48px rgba(20,30,50,0.12)}
+	.about-bottom{grid-template-columns:1fr;}
+	.div-blogs-bottom{grid-template-columns:1fr;}
+	.div-footer{flex-direction:column;align-items:center}
+	.footer-left{flex-direction:column;align-items:center}
+}
+
+@media (max-width:480px){
+	.hero-left h1{font-size:28px}
+	.hero-left p{font-size:14px}
+}
+
+/* small utilities */
+.sticky{position:sticky;top:0}
+
